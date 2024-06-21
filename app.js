@@ -54,7 +54,13 @@ app.set("views", "./views");
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  res.render("index");
+  const data = {
+    title: "Home Page",
+    name: "Aldrin",
+    age: 19,
+    email: "hikmahald@gmail.com",
+  };
+  res.render("index", data);
 });
 app.get("/about", (req, res) => {
   res.render("about");
