@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Node JS Web Server</title>
   </head>
-  <body>
+  <>
     <h3>Links</h3>
     <ul>
       <li><a href="/">home</a></li>
@@ -13,5 +13,13 @@
       <li><a href="/contact">contact</a></li>
     </ul>
     <h1>Hello World!</h1>
+    <% const user = {
+      name : 'Aldrin',
+      age : 19,
+      email : 'hikmahald@gmail.com'
+    } %>
+    <h2>Welcome, <%= user.name %></h2>
+    <h2>age : <%= user.age %></h2>
+    <h2>email : <%= user.email %></h2>
   </body>
 </html>
