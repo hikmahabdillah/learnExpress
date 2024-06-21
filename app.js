@@ -44,6 +44,7 @@
 //   console.log("Server is listening on port 8000..");
 // });
 
+// build server
 const express = require("express");
 const app = express();
 const port = 8000;
@@ -52,7 +53,15 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 app.get("/about", (req, res) => {
-  res.send("About Page");
+  res.send("this is About Page");
+});
+app.get("/contact", (req, res) => {
+  res.send("this is contact Pagess");
+});
+
+// for request anything
+app.use("/", (req, res) => {
+  res.send(404, "Not Found");
 });
 
 app.listen(port, () => {
