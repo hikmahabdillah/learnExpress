@@ -54,13 +54,24 @@ app.set("views", "./views");
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  const data = {
-    title: "Home Page",
-    name: "Aldrin",
-    age: 19,
-    email: "hikmahald@gmail.com",
-  };
-  res.render("index", data);
+  const data = [
+    {
+      name: "Aldrin",
+      age: 19,
+      email: "hikmahald@gmail.com",
+    },
+    {
+      name: "Gracia",
+      age: 23,
+      email: "graciaald@gmail.com",
+    },
+    {
+      name: "Hillary",
+      age: 17,
+      email: "hillaryald@gmail.com",
+    },
+  ];
+  res.render("index", { title: "Home Page", data });
 });
 app.get("/about", (req, res) => {
   res.render("about");
