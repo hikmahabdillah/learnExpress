@@ -74,10 +74,10 @@ app.get("/", (req, res) => {
   res.render("index", { title: "Home Page", data });
 });
 app.get("/about", (req, res) => {
-  res.render("about");
+  res.render("about", { title: "About Page" });
 });
 app.get("/contact", (req, res) => {
-  res.render("contact");
+  res.render("contact", { title: "Contact Page" });
 });
 
 // for request anything
