@@ -47,11 +47,13 @@
 // build server
 const express = require("express");
 const app = express();
+const expressLayouts = require("express-ejs-layouts");
 const port = 8000;
 
 // USE EJS
 app.set("views", "./views");
 app.set("view engine", "ejs");
+app.use(expressLayouts);
 
 app.get("/", (req, res) => {
   const data = [
@@ -71,13 +73,23 @@ app.get("/", (req, res) => {
       email: "hillaryald@gmail.com",
     },
   ];
-  res.render("index", { title: "Home Page", data });
+  res.render("index", {
+    title: "Home Page",
+    data,
+    layout: "layouts/mainlayouts.ejs",
+  });
 });
 app.get("/about", (req, res) => {
-  res.render("about", { title: "About Page" });
+  res.render("about", {
+    title: "About Page",
+    layout: "layouts/mainlayouts.ejs",
+  });
 });
 app.get("/contact", (req, res) => {
-  res.render("contact", { title: "Contact Page" });
+  res.render("contact", {
+    title: "Contact Page",
+    layout: "layouts/mainlayouts.ejs",
+  });
 });
 
 // for request anything
