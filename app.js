@@ -50,13 +50,16 @@ const app = express();
 const port = 8000;
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.sendFile("./index.html", { root: __dirname });
+  // res.send("Hello World!");
 });
 app.get("/about", (req, res) => {
-  res.send("this is About Page");
+  res.sendFile("./about.html", { root: __dirname });
+  // res.send("this is About Page");
 });
 app.get("/contact", (req, res) => {
-  res.send("this is contact Pagess");
+  res.sendFile("./contact.html", { root: __dirname });
+  // res.send("this is contact Pagess");
 });
 
 // for request anything
